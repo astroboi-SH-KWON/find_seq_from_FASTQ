@@ -6,6 +6,7 @@ import glob
 import multiprocessing as mp
 from threading import Thread
 import numpy as np
+import os
 
 
 import Util
@@ -14,6 +15,7 @@ import LogicPrep
 import Valid
 ############### start to set env ################
 WORK_DIR = "D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/"
+# WORK_DIR = os.getcwd() + "/"
 # generates list of fastq files to analyze
 SOURCES = glob.glob(WORK_DIR + "FASTQ/" + '*.fastq')
 
@@ -41,7 +43,9 @@ def multi_processing():
     pool = mp.Pool(processes=MULTI_CNT)
     pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
 
-    util.make_dict_to_excel(WORK_DIR + "result_count", pool_list)
+    mege_dict = logic.merge_pool_list(pool_list)
+
+    util.make_dict_to_excel(WORK_DIR + "output/result_count", mege_dict)
 
 def multi_processing_test():
     util = Util.Utils()

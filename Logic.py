@@ -86,7 +86,7 @@ class Logics:
         for val_arr in self.brcd_list:
             tttt_brcd = val_arr[1]
             ori_seq = val_arr[2]
-            edit_brcd = val_arr[3]
+            edit_seq = val_arr[3]
             for fastq_seq in fastq_list:
                 # check barcode
                 if tttt_brcd in fastq_seq:
@@ -98,10 +98,22 @@ class Logics:
                         result_dict[tttt_brcd]["Original sequence"] += 1
 
                     # check edited seq
-                    if edit_brcd in fastq_seq:
+                    if edit_seq in fastq_seq:
                         result_dict[tttt_brcd]["Edited sequence"] += 1
 
         return result_dict
+
+    def merge_pool_list(self, pool_list):
+        mege_dict = {}
+        for data_dict in pool_list:
+            for barcd_key, val_dict in data_dict.items():
+                if barcd_key in mege_dict:
+                    mege_dict[barcd_key]["Original sequence"] += val_dict["Original sequence"]
+                    mege_dict[barcd_key]["Edited sequence"] += val_dict["Edited sequence"]
+                else:
+                    mege_dict.update({barcd_key: val_dict})
+
+        return mege_dict
 
 
 

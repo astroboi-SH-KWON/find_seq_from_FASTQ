@@ -1,3 +1,5 @@
+from idlelib.debugobj_r import WrappedObjectTreeItem
+
 import pandas as pd
 import Bio as bio
 from Bio import SeqIO
@@ -71,10 +73,24 @@ def multi_thread_test_by_onefile():
 
     util.make_list_to_excel(WORK_DIR + "result_multi_thread", result_list)
 
+def test2():
+    result_count_dict = pd.read_excel(WORK_DIR + "result_count.xlsx").to_dict()['TTTT_Barcode']
+    result_count_sv_dict = pd.read_excel(WORK_DIR + "result_count_from2100server_10p.xlsx").to_dict()['TTTT_Barcode']
+    print("result_count_dict len : " + str(len(result_count_dict)))
+    print("result_count_sv_dict len : " + str(len(result_count_sv_dict)))
+    tmp_set1 = set()
+    for val in result_count_dict.values():
+        tmp_set1.add(val)
+    print("result_count_dict len : " + str(len(tmp_set1)))
+    tmp_set2 = set()
+    for val2 in result_count_sv_dict.values():
+        tmp_set2.add(val2)
+    print("result_count_sv_dict len : " + str(len(tmp_set2)))
+
+
 start_time = clock()
 print("start >>>>>>>>>>>>>>>>>>")
 # test()
-multi_thread_test_by_onefile()
-# multi_processing_test_by_onefile()
-# test2()
+# multi_thread_test_by_onefile()
+test2()
 print("::::::::::: %.2f seconds ::::::::::::::" % (clock() - start_time))
