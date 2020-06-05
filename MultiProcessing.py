@@ -24,13 +24,16 @@ MULTI_CNT = 10
 
 ############### end setting env ################
 
-def multi_processing_test_by_onefile():
+def multi_processing():
     util = Util.Utils()
 
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
     logic = Logic.Logics(brcd_list)
 
-    fastq_list = util.get_FASTQ_seq(SOURCES)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
+    # fastq_list = util.get_FASTQ_seq(SOURCES)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
+    fastq_list = []
+    for sources_list in util.get_FASTQ_seq(SOURCES).values():
+        fastq_list.extend(sources_list)
 
     # divide data_list by MULTI_CNT
     splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
@@ -40,7 +43,7 @@ def multi_processing_test_by_onefile():
 
     util.make_dict_to_excel(WORK_DIR + "result_count", pool_list)
 
-def multi_processing_test_by_onefile1():
+def multi_processing_test():
     util = Util.Utils()
 
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
@@ -63,5 +66,5 @@ def multi_processing_test_by_onefile1():
 if __name__ == '__main__':
     start_time = clock()
     print("start >>>>>>>>>>>>>>>>>>")
-    multi_processing_test_by_onefile()
+    multi_processing()
     print("::::::::::: %.2f seconds ::::::::::::::" % (clock() - start_time))

@@ -103,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591266075493</updated>
       <workItem from="1591266080974" duration="4831000" />
-      <workItem from="1591314472603" duration="19736000" />
+      <workItem from="1591314472603" duration="20610000" />
     </task>
     <servers />
   </component>
@@ -111,26 +111,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1017" height="522" key="GridCell.Tab.0.bottom" timestamp="1591340678185">
+    <state width="1017" height="522" key="GridCell.Tab.0.bottom" timestamp="1591342683788">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="1857" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
-    <state width="1017" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
-    <state width="1017" height="522" key="GridCell.Tab.0.center" timestamp="1591340678185">
+    <state width="1017" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591342683788" />
+    <state width="1017" height="522" key="GridCell.Tab.0.center" timestamp="1591342683788">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="1857" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
-    <state width="1017" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
-    <state width="1017" height="522" key="GridCell.Tab.0.left" timestamp="1591340678185">
+    <state width="1017" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591342683788" />
+    <state width="1017" height="522" key="GridCell.Tab.0.left" timestamp="1591342683788">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="1857" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
-    <state width="1017" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
-    <state width="1017" height="522" key="GridCell.Tab.0.right" timestamp="1591340678185">
+    <state width="1017" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591342683788" />
+    <state width="1017" height="522" key="GridCell.Tab.0.right" timestamp="1591342683788">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="1857" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
-    <state width="1017" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
+    <state width="1017" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591342683788" />
     <state x="1991" y="187" key="SettingsEditor" timestamp="1591266193966">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
@@ -161,7 +161,7 @@
     <state x="802" y="0" width="779" height="1166" key="dock-window-5/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591341344921" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$MultiProcessing.coverage" NAME="MultiProcessing Coverage Results" MODIFIED="1591340678179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$MultiProcessing.coverage" NAME="MultiProcessing Coverage Results" MODIFIED="1591342683777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$Test.coverage" NAME="Test Coverage Results" MODIFIED="1591340588717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
