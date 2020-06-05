@@ -28,7 +28,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.MultiProcessing">
+    <configuration name="MultiProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="find_seq_from_FASTQ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiProcessing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="find_seq_from_FASTQ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MultiProcessing" />
         <item itemvalue="Python.Test" />
       </list>
     </recent_temporary>
@@ -80,6 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591266075493</updated>
       <workItem from="1591266080974" duration="4831000" />
+      <workItem from="1591314472603" duration="19736000" />
     </task>
     <servers />
   </component>
@@ -87,36 +111,57 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1857" height="579" key="GridCell.Tab.0.bottom" timestamp="1591272395387">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1017" height="522" key="GridCell.Tab.0.bottom" timestamp="1591340678185">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1857" height="579" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591272395387" />
-    <state width="1017" height="579" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591269047715" />
-    <state width="1857" height="579" key="GridCell.Tab.0.center" timestamp="1591272395387">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1857" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1017" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
+    <state width="1017" height="522" key="GridCell.Tab.0.center" timestamp="1591340678185">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1857" height="579" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591272395387" />
-    <state width="1017" height="579" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591269047715" />
-    <state width="1857" height="579" key="GridCell.Tab.0.left" timestamp="1591272395387">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1857" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1017" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
+    <state width="1017" height="522" key="GridCell.Tab.0.left" timestamp="1591340678185">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1857" height="579" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591272395387" />
-    <state width="1017" height="579" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591269047714" />
-    <state width="1857" height="579" key="GridCell.Tab.0.right" timestamp="1591272395387">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1857" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1017" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
+    <state width="1017" height="522" key="GridCell.Tab.0.right" timestamp="1591340678185">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1857" height="579" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591272395387" />
-    <state width="1017" height="579" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591269047715" />
+    <state width="1857" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1017" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340678185" />
     <state x="1991" y="187" key="SettingsEditor" timestamp="1591266193966">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state x="1991" y="187" key="SettingsEditor/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591266193966" />
-    <state x="982" y="0" width="779" height="1166" maximized="true" key="dock-window-1" timestamp="1591267940300">
+    <state x="620" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1591314472741">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="982" y="0" width="779" height="1166" maximized="true" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591267940300" />
+    <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591314472741" />
+    <state x="123" y="0" width="779" height="1166" key="dock-window-1" timestamp="1591333988028">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="123" y="0" width="779" height="1166" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591333988028" />
+    <state x="715" y="0" width="779" height="1166" key="dock-window-2" timestamp="1591339387012">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="715" y="0" width="779" height="1166" key="dock-window-2/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591339387012" />
+    <state x="969" y="0" width="779" height="1166" key="dock-window-3" timestamp="1591340319927">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="969" y="0" width="779" height="1166" key="dock-window-3/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340319927" />
+    <state x="285" y="0" width="779" height="1166" key="dock-window-4" timestamp="1591340575035">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="285" y="0" width="779" height="1166" key="dock-window-4/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591340575035" />
+    <state x="802" y="0" width="779" height="1166" key="dock-window-5" timestamp="1591341344921">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="802" y="0" width="779" height="1166" key="dock-window-5/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591341344921" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$Test.coverage" NAME="Test Coverage Results" MODIFIED="1591269047708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$MultiProcessing.coverage" NAME="MultiProcessing Coverage Results" MODIFIED="1591340678179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$Test.coverage" NAME="Test Coverage Results" MODIFIED="1591340588717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

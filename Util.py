@@ -102,3 +102,23 @@ class Utils:
 
         workbook.save(filename=result_path + self.ext_xlsx)
 
+    def make_dict_to_excel(self, path, pool_list):
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+
+        row = 1
+        sheet.cell(row=row, column=1, value="index")
+        sheet.cell(row=row, column=2, value='TTTT_Barcode')
+        sheet.cell(row=row, column=3, value='Original sequence')
+        sheet.cell(row=row, column=4, value='Edited sequence')
+
+        for data_dict in pool_list:
+            for barcd_key, val_dict in data_dict.items():
+                row += 1
+                sheet.cell(row=row, column=1, value=str(row - 1))
+                sheet.cell(row=row, column=2, value=barcd_key)
+                sheet.cell(row=row, column=3, value=val_dict['Original sequence'])
+                sheet.cell(row=row, column=4, value=val_dict['Edited sequence'])
+
+        workbook.save(filename=path + self.ext_xlsx)
+
