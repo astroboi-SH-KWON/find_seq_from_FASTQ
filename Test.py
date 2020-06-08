@@ -16,8 +16,6 @@ import LogicPrep
 import Valid
 ############### start to set env ################
 WORK_DIR = "D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/"
-# generates list of fastq files to analyze
-SOURCES = glob.glob(WORK_DIR + "FASTQ/" + '*.fastq')
 
 BARCD_SEQ_FILE = "barcode_seq/PE_library_input file_HW_GS_SJH_final_20200602.txt"
 
@@ -28,10 +26,14 @@ MULTI_CNT = 10
 
 def test():
     util = Util.Utils()
-    logic = Logic.Logics()
 
+    sources = util.get_files_from_dir(WORK_DIR + "FASTQ/" + '*.fastq')
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
-    fastq_dict = util.get_FASTQ_seq(SOURCES)
+
+    logic = Logic.Logics(brcd_list)
+
+
+    fastq_dict = util.get_FASTQ_seq_dict(sources)
 
     result_list = logic.get_seq_from_FASTQ(brcd_list, fastq_dict)
 
@@ -41,12 +43,14 @@ def test():
 def multi_thread_test_by_onefile():
     util = Util.Utils()
 
+    sources = util.get_files_from_dir(WORK_DIR + "FASTQ/" + '*.fastq')
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
+
     logic = Logic.Logics(brcd_list)
     logic_prep = LogicPrep.LogicPreps()
 
 
-    fastq_list = util.get_FASTQ_seq(SOURCES)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
+    fastq_list = util.get_FASTQ_seq_dict(sources)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
 
     unit_len, remain = logic_prep.get_unit_len_n_remainer(fastq_list, MULTI_CNT)
 

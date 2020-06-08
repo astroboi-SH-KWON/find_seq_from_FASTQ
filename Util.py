@@ -42,7 +42,7 @@ class Utils:
     	        [...]
     	    ...}
     """
-    def get_FASTQ_seq(self, sources):
+    def get_FASTQ_seq_dict(self, sources):
         fastq_dict = {}
         for i in range(len(sources)):
             temp = list(SeqIO.parse(sources[i], "fastq"))
@@ -120,4 +120,14 @@ class Utils:
             sheet.cell(row=row, column=4, value=val_dict['Edited sequence'])
 
         workbook.save(filename=path + self.ext_xlsx)
+
+    """
+    get file lists in target dir by target ext
+    :param
+        path : target dir + "*." + target ext
+    :return
+        ['target dir/file_name.target ext', 'target dir/file_name.target ext' ...]
+    """
+    def get_files_from_dir(self, path):
+        return glob.glob(path)
 
