@@ -1,5 +1,3 @@
-from idlelib.debugobj_r import WrappedObjectTreeItem
-
 import pandas as pd
 import Bio as bio
 from Bio import SeqIO
@@ -39,7 +37,6 @@ def test():
 
     util.make_list_to_excel(WORK_DIR + "result", result_list)
 
-# key : D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq
 def multi_thread_test_by_onefile():
     util = Util.Utils()
 
@@ -49,7 +46,7 @@ def multi_thread_test_by_onefile():
     logic = Logic.Logics(brcd_list)
     logic_prep = LogicPrep.LogicPreps()
 
-
+    # key : D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq
     fastq_list = util.get_FASTQ_seq_dict(sources)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
 
     unit_len, remain = logic_prep.get_unit_len_n_remainer(fastq_list, MULTI_CNT)

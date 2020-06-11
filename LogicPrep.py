@@ -39,11 +39,13 @@ class LogicPreps:
             barcd_key = val_arr[1]
             ori_seq_cnt = int(val_arr[2])
             edited_seq_cnt = int(val_arr[3])
+            barcd_key_cnt = int(val_arr[4])
 
             if barcd_key in result_dict:
                 result_dict[barcd_key]["Original sequence"] += ori_seq_cnt
                 result_dict[barcd_key]["Edited sequence"] += edited_seq_cnt
+                result_dict[barcd_key]["TTTT_Barcode_cnt"] += barcd_key_cnt
             else:
-                result_dict.update({barcd_key: {'Original sequence': ori_seq_cnt, 'Edited sequence': edited_seq_cnt}})
+                result_dict.update({barcd_key: {'Original sequence': ori_seq_cnt, 'Edited sequence': edited_seq_cnt, 'TTTT_Barcode_cnt': barcd_key_cnt}})
 
         return result_dict

@@ -58,20 +58,27 @@ class Logics:
 
     def get_list_multi_p_seq_from_FASTQ(self, fastq_list):
         result_list = []
-        print("get_multi_p_seq_from_FASTQ starts ")
+        print("get_list_multi_p_seq_from_FASTQ starts ")
         for val_arr in self.brcd_list:
+            index_name = val_arr[0]
+            tttt_brcd = val_arr[1]
+            ori_seq = val_arr[2]
+            edit_seq = val_arr[3]
             for fastq_seq in fastq_list:
                 # check barcode
-                if val_arr[1] in fastq_seq:
-                    tmp_arr = [val_arr[0], val_arr[1]]
+                if tttt_brcd in fastq_seq:
+                    tmp_arr = [index_name, tttt_brcd]
+
+                    # TODO check seq after tttt_brcd seq
+                    fastq_seq_aft_barcd = fastq_seq[fastq_seq.index(tttt_brcd) + len(tttt_brcd):]
                     # check original seq
-                    if val_arr[2] in fastq_seq:
-                        tmp_arr.append(val_arr[2])
+                    if ori_seq in fastq_seq_aft_barcd:
+                        tmp_arr.append(ori_seq)
                     else:
                         tmp_arr.append("")
                     # check edited seq
-                    if val_arr[3] in fastq_seq:
-                        tmp_arr.append(val_arr[3])
+                    if edit_seq in fastq_seq_aft_barcd:
+                        tmp_arr.append(edit_seq)
                     else:
                         tmp_arr.append("")
                     # append FASTQ seq
@@ -91,7 +98,38 @@ class Logics:
                 # check barcode
                 if tttt_brcd in fastq_seq:
                     if tttt_brcd not in result_dict:
-                        result_dict.update({tttt_brcd: {"Original sequence": 0, "Edited sequence": 0}})
+                        result_dict.update(
+                            {tttt_brcd: {"Original sequence": 0, "Edited sequence": 0, "TTTT_Barcode_cnt": 1}})
+                    else:
+                        result_dict[tttt_brcd]["TTTT_Barcode_cnt"] += 1
+
+                    # TODO check seq after tttt_brcd seq
+                    fastq_seq_aft_barcd = fastq_seq[fastq_seq.index(tttt_brcd) + len(tttt_brcd):]
+                    # check original seq
+                    if ori_seq in fastq_seq_aft_barcd:
+                        result_dict[tttt_brcd]["Original sequence"] += 1
+
+                    # check edited seq
+                    if edit_seq in fastq_seq_aft_barcd:
+                        result_dict[tttt_brcd]["Edited sequence"] += 1
+
+        return result_dict
+
+    def get_dict_multi_p_seq_from_whole_FASTQ(self, fastq_list):
+        result_dict = {}
+        print("get_dict_multi_p_seq_from_whole_FASTQ starts ")
+        for val_arr in self.brcd_list:
+            tttt_brcd = val_arr[1]
+            ori_seq = val_arr[2]
+            edit_seq = val_arr[3]
+            for fastq_seq in fastq_list:
+                # check barcode
+                if tttt_brcd in fastq_seq:
+                    if tttt_brcd not in result_dict:
+                        result_dict.update(
+                            {tttt_brcd: {"Original sequence": 0, "Edited sequence": 0, "TTTT_Barcode_cnt": 1}})
+                    else:
+                        result_dict[tttt_brcd]["TTTT_Barcode_cnt"] += 1
 
                     # check original seq
                     if ori_seq in fastq_seq:
@@ -108,6 +146,7 @@ class Logics:
         for data_dict in pool_list:
             for barcd_key, val_dict in data_dict.items():
                 if barcd_key in mege_dict:
+                    mege_dict[barcd_key]["TTTT_Barcode_cnt"] += val_dict["TTTT_Barcode_cnt"]
                     mege_dict[barcd_key]["Original sequence"] += val_dict["Original sequence"]
                     mege_dict[barcd_key]["Edited sequence"] += val_dict["Edited sequence"]
                 else:

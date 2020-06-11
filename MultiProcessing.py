@@ -31,7 +31,6 @@ def multi_processing():
 
     logic = Logic.Logics(brcd_list)
 
-    # fastq_list = util.get_FASTQ_seq_dict(SOURCES)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
     fastq_list = []
     for sources_list in util.get_FASTQ_seq_dict(sources).values():
         fastq_list.extend(sources_list)
@@ -40,7 +39,10 @@ def multi_processing():
     splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
     print("process : " + str(mp.cpu_count()))
     pool = mp.Pool(processes=MULTI_CNT)
-    pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
+    # analyze FASTQ seq after barcode seq
+    # pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
+    # analyze whole FASTQ seq
+    pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
 
     merge_dict = logic.merge_pool_list(pool_list)
 
@@ -54,6 +56,7 @@ def multi_processing_test():
 
     logic = Logic.Logics(brcd_list)
 
+    # key : D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq
     fastq_list = util.get_FASTQ_seq_dict(sources)['D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/FASTQ\\18.fastq']
 
     # divide data_list by MULTI_CNT

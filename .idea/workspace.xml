@@ -127,7 +127,8 @@
       <updated>1591266075493</updated>
       <workItem from="1591266080974" duration="4831000" />
       <workItem from="1591314472603" duration="26252000" />
-      <workItem from="1591573077624" duration="4944000" />
+      <workItem from="1591573077624" duration="24986000" />
+      <workItem from="1591865403401" duration="721000" />
     </task>
     <servers />
   </component>
@@ -135,25 +136,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1017" height="522" key="GridCell.Tab.0.bottom" timestamp="1591596109985">
+    <state x="2269" y="287" key="FileChooserDialogImpl" timestamp="1591674476739">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1857" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591674476739" />
+    <state width="1813" height="89" key="GridCell.Tab.0.bottom" timestamp="1591766832068">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1813" height="89" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
     <state width="1017" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state width="1017" height="522" key="GridCell.Tab.0.center" timestamp="1591596109985">
-      <screen x="1982" y="-414" width="1018" height="1920" />
+    <state width="1813" height="89" key="GridCell.Tab.0.center" timestamp="1591766832068">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1857" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1813" height="89" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
     <state width="1017" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state width="1017" height="522" key="GridCell.Tab.0.left" timestamp="1591596109985">
-      <screen x="1982" y="-414" width="1018" height="1920" />
+    <state width="1813" height="89" key="GridCell.Tab.0.left" timestamp="1591766832068">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1857" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1813" height="89" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
     <state width="1017" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state width="1017" height="522" key="GridCell.Tab.0.right" timestamp="1591596109985">
-      <screen x="1982" y="-414" width="1018" height="1920" />
+    <state width="1813" height="89" key="GridCell.Tab.0.right" timestamp="1591766832068">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1857" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591337199938" />
+    <state width="1813" height="89" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
     <state width="1017" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
     <state x="1991" y="187" key="SettingsEditor" timestamp="1591266193966">
       <screen x="1982" y="-414" width="1018" height="1920" />
@@ -172,10 +177,11 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="996" y="-20" width="525" height="1166" maximized="true" key="dock-window-2/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591595570676" />
-    <state x="922" y="0" width="943" height="1087" key="dock-window-3" timestamp="1591596795433">
+    <state x="411" y="150" width="635" height="1166" maximized="true" key="dock-window-3" timestamp="1591652720112">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="922" y="0" width="943" height="1087" key="dock-window-3/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596795433" />
+    <state x="411" y="150" width="635" height="1166" maximized="true" key="dock-window-3/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591652720112" />
+    <state x="2058" y="34" width="635" height="1166" key="dock-window-3/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591601225752" />
     <state x="285" y="0" width="779" height="1166" key="dock-window-4" timestamp="1591340575035">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>

@@ -111,6 +111,7 @@ class Utils:
         sheet.cell(row=row, column=2, value='TTTT_Barcode')
         sheet.cell(row=row, column=3, value='Original sequence')
         sheet.cell(row=row, column=4, value='Edited sequence')
+        sheet.cell(row=row, column=5, value='TTTT_Barcode_cnt')
 
         for barcd_key, val_dict in mege_dict.items():
             row += 1
@@ -118,6 +119,7 @@ class Utils:
             sheet.cell(row=row, column=2, value=barcd_key)
             sheet.cell(row=row, column=3, value=val_dict['Original sequence'])
             sheet.cell(row=row, column=4, value=val_dict['Edited sequence'])
+            sheet.cell(row=row, column=5, value=val_dict['TTTT_Barcode_cnt'])
 
         workbook.save(filename=path + self.ext_xlsx)
 
