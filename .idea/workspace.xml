@@ -26,7 +26,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\find_seq_from_FASTQ" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -73,6 +79,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="MultiProcessing_4seq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="find_seq_from_FASTQ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiProcessing_4seq.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="find_seq_from_FASTQ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,6 +126,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.MultiProcessing_4seq" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.MultiProcessing" />
       </list>
@@ -129,6 +158,11 @@
       <workItem from="1591314472603" duration="26252000" />
       <workItem from="1591573077624" duration="24986000" />
       <workItem from="1591865403401" duration="721000" />
+      <workItem from="1591918706843" duration="1626000" />
+      <workItem from="1591935172837" duration="5168000" />
+      <workItem from="1592270554508" duration="3169000" />
+      <workItem from="1592466976786" duration="7286000" />
+      <workItem from="1592528017816" duration="4531000" />
     </task>
     <servers />
   </component>
@@ -140,43 +174,48 @@
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591674476739" />
-    <state width="1813" height="89" key="GridCell.Tab.0.bottom" timestamp="1591766832068">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1813" height="89" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
-    <state width="1017" height="522" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state width="1813" height="89" key="GridCell.Tab.0.center" timestamp="1591766832068">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1813" height="89" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
-    <state width="1017" height="522" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state width="1813" height="89" key="GridCell.Tab.0.left" timestamp="1591766832068">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1813" height="89" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
-    <state width="1017" height="522" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state width="1813" height="89" key="GridCell.Tab.0.right" timestamp="1591766832068">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1813" height="89" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591766832068" />
-    <state width="1017" height="522" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591596109985" />
-    <state x="1991" y="187" key="SettingsEditor" timestamp="1591266193966">
+    <state width="973" height="717" key="GridCell.Tab.0.bottom" timestamp="1592532848038">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state x="1991" y="187" key="SettingsEditor/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591266193966" />
-    <state x="2322" y="231" key="com.intellij.ide.util.TipDialog" timestamp="1591573082690">
+    <state width="973" height="717" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592532848038" />
+    <state width="881" height="353" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
+    <state width="973" height="279" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
+    <state width="973" height="717" key="GridCell.Tab.0.center" timestamp="1592532848038">
       <screen x="1982" y="-414" width="1018" height="1920" />
+    </state>
+    <state width="973" height="717" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592532848038" />
+    <state width="881" height="353" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
+    <state width="973" height="279" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
+    <state width="973" height="717" key="GridCell.Tab.0.left" timestamp="1592532848038">
+      <screen x="1982" y="-414" width="1018" height="1920" />
+    </state>
+    <state width="973" height="717" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592532848038" />
+    <state width="881" height="353" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
+    <state width="973" height="279" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
+    <state width="973" height="717" key="GridCell.Tab.0.right" timestamp="1592532848038">
+      <screen x="1982" y="-414" width="1018" height="1920" />
+    </state>
+    <state width="973" height="717" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592532848038" />
+    <state width="881" height="353" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
+    <state width="973" height="279" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
+    <state x="1991" y="187" key="SettingsEditor" timestamp="1591924301849">
+      <screen x="1982" y="-414" width="1018" height="1920" />
+    </state>
+    <state x="1991" y="187" key="SettingsEditor/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591924301849" />
+    <state x="620" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1592528020496">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591314472741" />
-    <state x="2322" y="231" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591573082690" />
-    <state x="780" y="81" width="779" height="1166" key="dock-window-1" timestamp="1591595288409">
+    <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592528020496" />
+    <state x="921" y="0" width="942" height="1087" key="dock-window-1" timestamp="1592531374903">
+      <screen x="0" y="0" width="1856" height="1080" />
+    </state>
+    <state x="921" y="0" width="942" height="1087" key="dock-window-1/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592531374903" />
+    <state x="-8" y="-8" width="945" height="1096" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592469298672" />
+    <state x="265" y="0" width="943" height="1087" key="dock-window-2" timestamp="1592470231957">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="780" y="81" width="779" height="1166" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591595288409" />
-    <state x="996" y="-20" width="525" height="1166" maximized="true" key="dock-window-2" timestamp="1591595570676">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state x="996" y="-20" width="525" height="1166" maximized="true" key="dock-window-2/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591595570676" />
+    <state x="265" y="0" width="943" height="1087" key="dock-window-2/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592470231957" />
     <state x="411" y="150" width="635" height="1166" maximized="true" key="dock-window-3" timestamp="1591652720112">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -201,7 +240,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$MultiProcessing.coverage" NAME="MultiProcessing Coverage Results" MODIFIED="1591348559741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$Main.coverage" NAME="Main Coverage Results" MODIFIED="1591596109978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$Main.coverage" NAME="Main Coverage Results" MODIFIED="1592532848032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$Test.coverage" NAME="Test Coverage Results" MODIFIED="1591348940510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/find_seq_from_FASTQ$MultiProcessing_4seq.coverage" NAME="MultiProcessing_4seq Coverage Results" MODIFIED="1592470074218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

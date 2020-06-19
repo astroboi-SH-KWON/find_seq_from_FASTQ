@@ -50,6 +50,14 @@ class Utils:
 
         return fastq_dict
 
+    def get_FASTQ_seq_with_targt_seq_dict(self, sources, trgt_seq):
+        fastq_dict = {}
+        for i in range(len(sources)):
+            temp = list(SeqIO.parse(sources[i], "fastq"))
+            fastq_dict[sources[i]] = [str(temp[k].seq) for k in range(len(temp)) if trgt_seq.upper() in str(temp[k].seq).upper()]
+
+        return fastq_dict
+
     """
     :return
         result_list = [
@@ -102,7 +110,7 @@ class Utils:
 
         workbook.save(filename=result_path + self.ext_xlsx)
 
-    def make_dict_to_excel(self, path, mege_dict):
+    def make_dict_to_excel(self, path, merge_dict):
         workbook = openpyxl.Workbook()
         sheet = workbook.active
 
@@ -113,7 +121,7 @@ class Utils:
         sheet.cell(row=row, column=4, value='Edited sequence')
         sheet.cell(row=row, column=5, value='TTTT_Barcode_cnt')
 
-        for barcd_key, val_dict in mege_dict.items():
+        for barcd_key, val_dict in merge_dict.items():
             row += 1
             sheet.cell(row=row, column=1, value=str(row - 1))
             sheet.cell(row=row, column=2, value=barcd_key)
@@ -132,4 +140,36 @@ class Utils:
     """
     def get_files_from_dir(self, path):
         return glob.glob(path)
+
+    def make_4seq_dict_to_excel(self, path, merge_dict):
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+
+        row = 1
+        sheet.cell(row=row, column=1, value="index")
+        sheet.cell(row=row, column=2, value='TTTT_Barcode')
+        sheet.cell(row=row, column=3, value='TTTT_Barcode_cnt')
+        sheet.cell(row=row, column=4, value='Target sequences without edit')
+        sheet.cell(row=row, column=5, value='Target sequences with edit (complete)')
+        sheet.cell(row=row, column=6, value='Position 1 only')
+        sheet.cell(row=row, column=7, value='Position 2 only')
+        sheet.cell(row=row, column=8, value='ETC')
+
+        for barcd_key, val_dict in merge_dict.items():
+            row += 1
+            tttt_brcd = val_dict['TTTT_Barcode_cnt']
+            wout_edit_seq = val_dict['Target_sequences_without_edit']
+            edit_seq = val_dict['Target_sequences_with_edit_complete']
+            pos_1_seq = val_dict['Position_1_only']
+            pos_2_seq = val_dict['Position_2_only']
+            sheet.cell(row=row, column=1, value=str(row - 1))
+            sheet.cell(row=row, column=2, value=barcd_key)
+            sheet.cell(row=row, column=3, value=tttt_brcd)
+            sheet.cell(row=row, column=4, value=wout_edit_seq)
+            sheet.cell(row=row, column=5, value=edit_seq)
+            sheet.cell(row=row, column=6, value=pos_1_seq)
+            sheet.cell(row=row, column=7, value=pos_2_seq)
+            sheet.cell(row=row, column=8, value=str(tttt_brcd - (wout_edit_seq + edit_seq + pos_1_seq + pos_2_seq)))
+
+        workbook.save(filename=path + self.ext_xlsx)
 
