@@ -1,7 +1,7 @@
 import pandas as pd
 import Bio as bio
 from Bio import SeqIO
-from time import clock
+import time
 import glob
 import multiprocessing as mp
 from threading import Thread
@@ -88,10 +88,15 @@ def test2():
         tmp_set2.add(val2)
     print("result_count_sv_dict len : " + str(len(tmp_set2)))
 
+def test3():
+    num_arr = [0.916, 0.978, 0.658, 0.794, 0.995, 0.955, 0.818]
+    print(sorted(num_arr))
+    print(str((len(num_arr) + 1) / 4))
 
-start_time = clock()
+
+start_time = time.perf_counter()
 print("start >>>>>>>>>>>>>>>>>>")
 # test()
 # multi_thread_test_by_onefile()
-test2()
-print("::::::::::: %.2f seconds ::::::::::::::" % (clock() - start_time))
+test3()
+print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))

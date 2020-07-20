@@ -46,9 +46,7 @@ def multi_processing():
 
 
 if __name__ == '__main__':
-    start_time = clock()
-    # start_time = time.clock_gettime(1)
+    start_time = time.perf_counter()
     print("start >>>>>>>>>>>>>>>>>>")
     multi_processing()
-    print("::::::::::: %.2f seconds ::::::::::::::" % (clock() - start_time))
-    # print("::::::::::: %.2f seconds ::::::::::::::" % (time.clock_gettime(1) - start_time))
+    print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))

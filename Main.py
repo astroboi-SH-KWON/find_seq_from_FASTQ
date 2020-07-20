@@ -1,4 +1,4 @@
-from time import clock
+import time
 
 
 import Util
@@ -8,6 +8,10 @@ import Valid
 ############### start to set env ################
 # WORK_DIR = "D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/"
 WORK_DIR = "D:/000_WORK/KimHuiKwon/20200618/WORK_DIR/"
+
+SUB_OUT_DIR = "total/"
+############### end setting env #################
+# WORK_DIR = "D:/000_WORK/KimHuiKwon/20200618/WORK_DIR/"
 
 SUB_OUT_DIR = "total/"
 ############### end setting env #################
@@ -41,8 +45,9 @@ def merge_multi_processing_4seq_excel_result():
     util.make_4seq_dict_to_excel(WORK_DIR + "output/" + SUB_OUT_DIR + "merge_result_count", merge_dict)
 
 
-start_time = clock()
+start_time = time.perf_counter()
 print("start >>>>>>>>>>>>>>>>>>")
 # merge_multi_processing_excel_result()
 merge_multi_processing_4seq_excel_result()
-print("::::::::::: %.2f seconds ::::::::::::::" % (clock() - start_time))
+# merge_multi_processing_4seq_excel_result()
+print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))
