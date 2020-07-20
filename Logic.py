@@ -212,6 +212,21 @@ class Logics:
 
         return mege_dict
 
+    def merge_4seq_pool_list(self, pool_list):
+        mege_dict = {}
+        for data_dict in pool_list:
+            for barcd_key, val_dict in data_dict.items():
+                if barcd_key in mege_dict:
+                    mege_dict[barcd_key]["TTTT_Barcode_cnt"] += val_dict["TTTT_Barcode_cnt"]
+                    mege_dict[barcd_key]["Target_sequences_without_edit"] += val_dict["Target_sequences_without_edit"]
+                    mege_dict[barcd_key]["Target_sequences_with_edit_complete"] += val_dict["Target_sequences_with_edit_complete"]
+                    mege_dict[barcd_key]["Position_1_only"] += val_dict["Position_1_only"]
+                    mege_dict[barcd_key]["Position_2_only"] += val_dict["Position_2_only"]
+                else:
+                    mege_dict.update({barcd_key: val_dict})
+
+        return mege_dict
+
 
 
 

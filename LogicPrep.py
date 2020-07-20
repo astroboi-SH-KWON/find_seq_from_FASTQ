@@ -73,3 +73,27 @@ class LogicPreps:
                                                 "Position_1_only": pos_1_seq_cnt, "Position_2_only": pos_2_seq_cnt}})
 
         return result_dict
+
+    def make_4seq_list_to_dict(self, total_list):
+        result_dict = {}
+        for val_arr in total_list:
+            barcd_key = val_arr[1]
+            barcd_key_cnt = int(val_arr[2])
+            wout_edit_seq_cnt = int(val_arr[3])
+            edited_seq_cnt = int(val_arr[4])
+            pos_1_seq_cnt = int(val_arr[5])
+            pos_2_seq_cnt = int(val_arr[6])
+
+            if barcd_key in result_dict:
+                result_dict[barcd_key]["TTTT_Barcode_cnt"] += barcd_key_cnt
+                result_dict[barcd_key]["Target_sequences_without_edit"] += wout_edit_seq_cnt
+                result_dict[barcd_key]["Target_sequences_with_edit_complete"] += edited_seq_cnt
+                result_dict[barcd_key]["Position_1_only"] += pos_1_seq_cnt
+                result_dict[barcd_key]["Position_2_only"] += pos_2_seq_cnt
+            else:
+                result_dict.update({barcd_key: {"TTTT_Barcode_cnt": barcd_key_cnt,
+                                                "Target_sequences_without_edit": wout_edit_seq_cnt,
+                                                "Target_sequences_with_edit_complete": edited_seq_cnt,
+                                                "Position_1_only": pos_1_seq_cnt, "Position_2_only": pos_2_seq_cnt}})
+
+        return result_dict

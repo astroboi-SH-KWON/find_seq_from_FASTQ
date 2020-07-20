@@ -173,3 +173,35 @@ class Utils:
 
         workbook.save(filename=path + self.ext_xlsx)
 
+    def make_4seq_dict_to_excel(self, path, merge_dict):
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+
+        row = 1
+        sheet.cell(row=row, column=1, value="index")
+        sheet.cell(row=row, column=2, value='TTTT_Barcode')
+        sheet.cell(row=row, column=3, value='TTTT_Barcode_cnt')
+        sheet.cell(row=row, column=4, value='Target sequences without edit')
+        sheet.cell(row=row, column=5, value='Target sequences with edit (complete)')
+        sheet.cell(row=row, column=6, value='Position 1 only')
+        sheet.cell(row=row, column=7, value='Position 2 only')
+        sheet.cell(row=row, column=8, value='ETC')
+
+        for barcd_key, val_dict in merge_dict.items():
+            row += 1
+            tttt_brcd = val_dict['TTTT_Barcode_cnt']
+            wout_edit_seq = val_dict['Target_sequences_without_edit']
+            edit_seq = val_dict['Target_sequences_with_edit_complete']
+            pos_1_seq = val_dict['Position_1_only']
+            pos_2_seq = val_dict['Position_2_only']
+            sheet.cell(row=row, column=1, value=str(row - 1))
+            sheet.cell(row=row, column=2, value=barcd_key)
+            sheet.cell(row=row, column=3, value=tttt_brcd)
+            sheet.cell(row=row, column=4, value=wout_edit_seq)
+            sheet.cell(row=row, column=5, value=edit_seq)
+            sheet.cell(row=row, column=6, value=pos_1_seq)
+            sheet.cell(row=row, column=7, value=pos_2_seq)
+            sheet.cell(row=row, column=8, value=str(tttt_brcd - (wout_edit_seq + edit_seq + pos_1_seq + pos_2_seq)))
+
+        workbook.save(filename=path + self.ext_xlsx)
+
