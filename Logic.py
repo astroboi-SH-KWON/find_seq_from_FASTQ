@@ -212,29 +212,44 @@ class Logics:
 
         return mege_dict
 
-    def merge_4seq_pool_list(self, pool_list):
-        mege_dict = {}
-        for data_dict in pool_list:
-            for barcd_key, val_dict in data_dict.items():
-                if barcd_key in mege_dict:
-                    mege_dict[barcd_key]["TTTT_Barcode_cnt"] += val_dict["TTTT_Barcode_cnt"]
-                    mege_dict[barcd_key]["Target_sequences_without_edit"] += val_dict["Target_sequences_without_edit"]
-                    mege_dict[barcd_key]["Target_sequences_with_edit_complete"] += val_dict["Target_sequences_with_edit_complete"]
-                    mege_dict[barcd_key]["Position_1_only"] += val_dict["Position_1_only"]
-                    mege_dict[barcd_key]["Position_2_only"] += val_dict["Position_2_only"]
-                else:
-                    mege_dict.update({barcd_key: val_dict})
+    def get_dict_multi(self, bc_list):
+        print("start get_dict_multi")
+        fastq_dir = self.brcd_list[0]
+        result_dict = {}
+        for bc_arr in bc_list:
+            fastq_nm = bc_arr[0]
+            brcd_seq = bc_arr[1].upper()
+            wt_seq = bc_arr[2].upper()
+            edited_seq = bc_arr[3].upper()
+            try:
+                tmp = list(SeqIO.parse(fastq_dir + fastq_nm.replace(".gz", ""), "fastq"))
+                seq_list = [[str(tmp[i].seq).upper(), str(tmp[i].reverse_complement().seq).upper()] for i in range(len(tmp))]
 
-        return mege_dict
+                for fastq_pair in seq_list:
+                    fastq_seq = fastq_pair[0]
+                    rvrs_com_fastq = fastq_pair[1]
+                    if brcd_seq in fastq_seq:
+                        if fastq_nm not in result_dict:
+                            result_dict.update(
+                                {fastq_nm: {"TTTT_Barcode_cnt": 1, "Target_sequences_without_edit": 0,
+                                             "Target_sequences_with_edit_complete": 0,
+                                             "Position_1_only": 0,
+                                             "Position_2_only": 0}})
+                        else:
+                            result_dict[fastq_nm]["TTTT_Barcode_cnt"] += 1
 
 
+                        if wt_seq in fastq_seq:
+                            result_dict[fastq_nm]["Target_sequences_without_edit"] += 1
+                        elif wt_seq in rvrs_com_fastq:
+                            result_dict[fastq_nm]["Position_1_only"] += 1
+
+                        if edited_seq in fastq_seq:
+                            result_dict[fastq_nm]["Target_sequences_with_edit_complete"] += 1
+                        elif edited_seq in rvrs_com_fastq:
+                            result_dict[fastq_nm]["Position_2_only"] += 1
+            except Exception as err:
+                print(err)
 
 
-
-
-
-
-
-
-
-
+        return result_dict

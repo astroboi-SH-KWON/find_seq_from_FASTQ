@@ -11,10 +11,6 @@ WORK_DIR = "D:/000_WORK/KimHuiKwon/20200618/WORK_DIR/"
 
 SUB_OUT_DIR = "total/"
 ############### end setting env #################
-# WORK_DIR = "D:/000_WORK/KimHuiKwon/20200618/WORK_DIR/"
-
-SUB_OUT_DIR = "total/"
-############### end setting env #################
 
 
 

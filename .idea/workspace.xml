@@ -19,20 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e43ad5c-e727-4e0d-8c88-ede73d853d3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/find_seq_from_FASTQ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/find_seq_from_FASTQ.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9e43ad5c-e727-4e0d-8c88-ede73d853d3d" name="Default Changelist" comment="import time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/MultiProcessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiProcessing_4seq.py" beforeDir="false" afterPath="$PROJECT_DIR$/MultiProcessing_4seq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-    </list>
-    <list id="b9c7044a-a66f-4d6b-be8e-6ce5de18e3ec" name="import time" comment="">
       <change beforePath="$PROJECT_DIR$/Logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogicPrep.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogicPrep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util.py" afterDir="false" />
     </list>
+    <list id="b9c7044a-a66f-4d6b-be8e-6ce5de18e3ec" name="import time" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +58,7 @@
       <recent name="D:\Github\find_seq_from_FASTQ" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Multi_2seq_to_1fastq">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="find_seq_from_FASTQ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,6 +125,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Multi_2seq_to_1fastq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="find_seq_from_FASTQ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Multi_2seq_to_1fastq.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="find_seq_from_FASTQ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,6 +170,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Multi_2seq_to_1fastq" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.MultiProcessing_4seq" />
@@ -185,6 +200,28 @@
       <workItem from="1592528017816" duration="7604000" />
       <workItem from="1592783148438" duration="4351000" />
     </task>
+    <task id="LOCAL-00001" summary="import time">
+      <created>1595231067412</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595231067412</updated>
+    </task>
+    <task id="LOCAL-00002" summary="import time">
+      <created>1595231122182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595231122182</updated>
+    </task>
+    <task id="LOCAL-00003" summary="import time">
+      <created>1595231255776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595231255776</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,43 +237,53 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="import time" />
+    <option name="LAST_COMMIT_MESSAGE" value="import time" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2012" y="-373" width="896" height="1706" key="DiffContextDialog" timestamp="1595230767786">
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state x="2012" y="-373" width="896" height="1706" key="DiffContextDialog/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595230767786" />
-    <state x="2269" y="287" key="FileChooserDialogImpl" timestamp="1592795475435">
-      <screen x="1982" y="-414" width="1018" height="1920" />
+    <state x="2224" y="225" key="FileChooserDialogImpl" timestamp="1595232037943">
+      <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592795475435" />
+    <state x="2224" y="225" key="FileChooserDialogImpl/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595232037943" />
     <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591674476739" />
-    <state width="1811" height="187" key="GridCell.Tab.0.bottom" timestamp="1592823544244">
-      <screen x="0" y="0" width="1856" height="1080" />
+    <state width="1057" height="865" key="GridCell.Tab.0.bottom" timestamp="1595241657908">
+      <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
+    <state width="1057" height="865" key="GridCell.Tab.0.bottom/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
     <state width="881" height="353" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
-    <state width="1811" height="187" key="GridCell.Tab.0.center" timestamp="1592823544244">
-      <screen x="0" y="0" width="1856" height="1080" />
+    <state width="1057" height="865" key="GridCell.Tab.0.center" timestamp="1595241657908">
+      <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
+    <state width="1057" height="865" key="GridCell.Tab.0.center/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
     <state width="881" height="353" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
-    <state width="1811" height="187" key="GridCell.Tab.0.left" timestamp="1592823544244">
-      <screen x="0" y="0" width="1856" height="1080" />
+    <state width="1057" height="865" key="GridCell.Tab.0.left" timestamp="1595241657908">
+      <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
+    <state width="1057" height="865" key="GridCell.Tab.0.left/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
     <state width="881" height="353" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
-    <state width="1811" height="187" key="GridCell.Tab.0.right" timestamp="1592823544244">
-      <screen x="0" y="0" width="1856" height="1080" />
+    <state width="1057" height="865" key="GridCell.Tab.0.right" timestamp="1595241657908">
+      <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
+    <state width="1057" height="865" key="GridCell.Tab.0.right/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
     <state width="881" height="353" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
     <state x="1920" y="29" key="MergeDialog" timestamp="1595230680469">
@@ -251,20 +298,30 @@
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state x="2306" y="395" key="VCS.ChangelistChooser/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595230663624" />
+    <state x="2051" y="212" key="Vcs.Push.Dialog.v2" timestamp="1595231270953">
+      <screen x="1920" y="-465" width="1080" height="1890" />
+    </state>
+    <state x="2051" y="212" key="Vcs.Push.Dialog.v2/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595231270953" />
     <state x="2322" y="231" key="com.intellij.ide.util.TipDialog" timestamp="1592783156653">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state x="2322" y="231" key="com.intellij.ide.util.TipDialog/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592783156653" />
     <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591314472741" />
     <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592528020496" />
-    <state x="921" y="0" width="942" height="1087" key="dock-window-1" timestamp="1592531374903">
-      <screen x="0" y="0" width="1856" height="1080" />
+    <state x="2264" y="392" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595231163873">
+      <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
-    <state x="921" y="0" width="942" height="1087" key="dock-window-1/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592531374903" />
-    <state x="-8" y="-8" width="945" height="1096" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592469298672" />
-    <state x="265" y="0" width="943" height="1087" key="dock-window-2" timestamp="1592470231957">
+    <state x="2264" y="392" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595231163873" />
+    <state x="922" y="0" width="943" height="1087" key="dock-window-1" timestamp="1595240002028">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
+    <state x="921" y="0" width="942" height="1087" key="dock-window-1/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592531374903" />
+    <state x="922" y="0" width="943" height="1087" key="dock-window-1/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595240002028" />
+    <state x="-8" y="-8" width="945" height="1096" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592469298672" />
+    <state x="-7" y="0" width="943" height="1087" key="dock-window-2" timestamp="1595238340306">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="-7" y="0" width="943" height="1087" key="dock-window-2/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595238340306" />
     <state x="265" y="0" width="943" height="1087" key="dock-window-2/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592470231957" />
     <state x="411" y="150" width="635" height="1166" maximized="true" key="dock-window-3" timestamp="1591652720112">
       <screen x="0" y="0" width="1858" height="1080" />
