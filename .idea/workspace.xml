@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e43ad5c-e727-4e0d-8c88-ede73d853d3d" name="Default Changelist" comment="import time">
+    <list default="true" id="9e43ad5c-e727-4e0d-8c88-ede73d853d3d" name="Default Changelist" comment="David_NGS_PE2 &#10;Reference_NGS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Multi_2seq_to_1fastq.py" beforeDir="false" afterPath="$PROJECT_DIR$/Multi_2seq_to_1fastq.py" afterDir="false" />
     </list>
     <list id="b9c7044a-a66f-4d6b-be8e-6ce5de18e3ec" name="import time" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1595231255776</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="David_NGS_PE2 &#10;Reference_NGS">
+      <created>1595242301438</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595242301438</updated>
+    </task>
+    <task id="LOCAL-00005" summary="David_NGS_PE2 &#10;Reference_NGS">
+      <created>1595242314943</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1595242314943</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +254,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="import time" />
-    <option name="LAST_COMMIT_MESSAGE" value="import time" />
+    <MESSAGE value="David_NGS_PE2 &#10;Reference_NGS" />
+    <option name="LAST_COMMIT_MESSAGE" value="David_NGS_PE2 &#10;Reference_NGS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2012" y="-373" width="896" height="1706" key="DiffContextDialog" timestamp="1595230767786">
@@ -254,36 +268,36 @@
     <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592795475435" />
     <state x="2224" y="225" key="FileChooserDialogImpl/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595232037943" />
     <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591674476739" />
-    <state width="1057" height="865" key="GridCell.Tab.0.bottom" timestamp="1595241657908">
+    <state width="1057" height="865" key="GridCell.Tab.0.bottom" timestamp="1595299385712">
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
-    <state width="1057" height="865" key="GridCell.Tab.0.bottom/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
+    <state width="1057" height="865" key="GridCell.Tab.0.bottom/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595299385712" />
     <state width="881" height="353" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
-    <state width="1057" height="865" key="GridCell.Tab.0.center" timestamp="1595241657908">
+    <state width="1057" height="865" key="GridCell.Tab.0.center" timestamp="1595299385712">
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
-    <state width="1057" height="865" key="GridCell.Tab.0.center/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
+    <state width="1057" height="865" key="GridCell.Tab.0.center/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595299385712" />
     <state width="881" height="353" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
-    <state width="1057" height="865" key="GridCell.Tab.0.left" timestamp="1595241657908">
+    <state width="1057" height="865" key="GridCell.Tab.0.left" timestamp="1595299385712">
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
-    <state width="1057" height="865" key="GridCell.Tab.0.left/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
+    <state width="1057" height="865" key="GridCell.Tab.0.left/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595299385712" />
     <state width="881" height="353" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
-    <state width="1057" height="865" key="GridCell.Tab.0.right" timestamp="1595241657908">
+    <state width="1057" height="865" key="GridCell.Tab.0.right" timestamp="1595299385712">
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state width="1811" height="187" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592823544244" />
     <state width="973" height="717" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592790098929" />
-    <state width="1057" height="865" key="GridCell.Tab.0.right/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595241657908" />
+    <state width="1057" height="865" key="GridCell.Tab.0.right/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595299385712" />
     <state width="881" height="353" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592386301315" />
     <state width="973" height="279" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592527393097" />
     <state x="1920" y="29" key="MergeDialog" timestamp="1595230680469">
@@ -298,10 +312,10 @@
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
     <state x="2306" y="395" key="VCS.ChangelistChooser/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595230663624" />
-    <state x="2051" y="212" key="Vcs.Push.Dialog.v2" timestamp="1595231270953">
+    <state x="2051" y="212" key="Vcs.Push.Dialog.v2" timestamp="1595242330789">
       <screen x="1920" y="-465" width="1080" height="1890" />
     </state>
-    <state x="2051" y="212" key="Vcs.Push.Dialog.v2/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595231270953" />
+    <state x="2051" y="212" key="Vcs.Push.Dialog.v2/0.0.1858.1080/1920.-465.1080.1890@1920.-465.1080.1890" timestamp="1595242330789" />
     <state x="2322" y="231" key="com.intellij.ide.util.TipDialog" timestamp="1592783156653">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>

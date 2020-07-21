@@ -249,6 +249,7 @@ class Logics:
                         elif edited_seq in rvrs_com_fastq:
                             result_dict[fastq_nm]["Position_2_only"] += 1
             except Exception as err:
+                print("path : " + fastq_dir + fastq_nm)
                 print(err)
 
 
