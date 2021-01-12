@@ -1,10 +1,5 @@
-import pandas as pd
-import Bio as bio
-from Bio import SeqIO
 import time
-import glob
 import multiprocessing as mp
-from threading import Thread
 import numpy as np
 import os
 import platform
@@ -12,7 +7,6 @@ import platform
 
 import Util
 import Logic
-import LogicPrep
 ############### start to set env ################
 WORK_DIR = os.getcwd() + "/"
 SYSTEM_NM = platform.system()
@@ -60,8 +54,8 @@ def multi_processing_w_solo_fastq():
 
     # fastq file name without ext
     solo_fastg_fl_nm_list = [
-        "Monkey_PE_2K--GAATTCGT-AGGCTATA_1"
-        , "Monkey_PE_2K--TAATGCGC-GCCTCTAT_1"
+         "Monkey_PE_2K--TAATGCGC-GCCTCTAT_1"
+        , "Monkey_PE_2K--GAATTCGT-AGGCTATA_1"
     ]
 
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
@@ -73,6 +67,8 @@ def multi_processing_w_solo_fastq():
 
         # divide data_list by MULTI_CNT
         splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
+        fastq_list.clear()
+
         print("process : " + str(mp.cpu_count()))
         pool = mp.Pool(processes=MULTI_CNT)
         ## analyze FASTQ seq after barcode seq
@@ -81,8 +77,11 @@ def multi_processing_w_solo_fastq():
         pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
 
         merge_dict = logic.merge_pool_list(pool_list)
+        pool.close()
+        pool_list[:] = []
 
         util.make_dict_to_excel(WORK_DIR + "output/result_" + fastq_fl_nm, merge_dict)
+        merge_dict.clear()
 
 def multi_processing_test():
     util = Util.Utils()
