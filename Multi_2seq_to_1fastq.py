@@ -8,7 +8,6 @@ from Bio import SeqIO
 import Util
 import Logic
 import LogicPrep
-import Valid
 ############### start to set env ################
 WORK_DIR = "D:/000_WORK/KimHuiKwon/20200720/WORK_DIR/"
 # WORK_DIR = os.getcwd() + "/"

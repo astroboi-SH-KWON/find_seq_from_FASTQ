@@ -50,6 +50,10 @@ class Utils:
 
         return fastq_dict
 
+    def get_FASTQ_seq_list(self, fastq_path):
+        temp = list(SeqIO.parse(fastq_path, "fastq"))
+        return [str(temp[k].seq) for k in range(len(temp))]
+
     def get_FASTQ_seq_with_targt_seq_dict(self, sources, trgt_seq):
         fastq_dict = {}
         for i in range(len(sources)):
