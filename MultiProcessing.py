@@ -18,11 +18,14 @@ else:
     WORK_DIR = "D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/"
 
 FASTQ = 'FASTQ/'
-BARCD_SEQ_FILE = "barcode_seq/210112_Novaseq_find_seq_from_FASTQ_index.txt"
+# BARCD_SEQ_FILE = "barcode_seq/210112_Novaseq_find_seq_from_FASTQ_index.txt"
+BARCD_SEQ_FILE = "barcode_seq/210113_Novaseq_find_seq_from_FASTQ_index.txt"
 
-MULTI_CNT = 10
+TOTAL_CPU = mp.cpu_count()
+MULTI_CNT = int(TOTAL_CPU*0.5)
 
 ############### end setting env ################
+
 
 def multi_processing():
     util = Util.Utils()
@@ -38,7 +41,9 @@ def multi_processing():
 
     # divide data_list by MULTI_CNT
     splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
-    print("process : " + str(mp.cpu_count()))
+    print("platform.system() : ", SYSTEM_NM)
+    print("total cpu_count : ", str(TOTAL_CPU))
+    print("will use : ", str(MULTI_CNT))
     pool = mp.Pool(processes=MULTI_CNT)
     ## analyze FASTQ seq after barcode seq
     # pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
@@ -48,6 +53,7 @@ def multi_processing():
     merge_dict = logic.merge_pool_list(pool_list)
 
     util.make_dict_to_excel(WORK_DIR + "output/result_count", merge_dict)
+
 
 def multi_processing_w_solo_fastq():
     util = Util.Utils()
@@ -69,7 +75,9 @@ def multi_processing_w_solo_fastq():
         splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
         fastq_list.clear()
 
-        print("process : " + str(mp.cpu_count()))
+        print("platform.system() : ", SYSTEM_NM)
+        print("total cpu_count : ", str(TOTAL_CPU))
+        print("will use : ", str(MULTI_CNT))
         pool = mp.Pool(processes=MULTI_CNT)
         ## analyze FASTQ seq after barcode seq
         # pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
@@ -82,6 +90,7 @@ def multi_processing_w_solo_fastq():
 
         util.make_dict_to_excel(WORK_DIR + "output/result_" + fastq_fl_nm, merge_dict)
         merge_dict.clear()
+
 
 def multi_processing_test():
     util = Util.Utils()
@@ -96,7 +105,9 @@ def multi_processing_test():
 
     # divide data_list by MULTI_CNT
     splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
-    print("process : " + str(mp.cpu_count()))
+    print("platform.system() : ", SYSTEM_NM)
+    print("total cpu_count : ", str(TOTAL_CPU))
+    print("will use : ", str(MULTI_CNT))
     pool = mp.Pool(processes=MULTI_CNT)
     # result_list = pd.concat(pool.map(logic.get_multi_p_seq_from_FASTQ, splited_fastq_list))
     pool_list = pool.map(logic.get_list_multi_p_seq_from_FASTQ, splited_fastq_list)
@@ -105,6 +116,7 @@ def multi_processing_test():
         result_list.extend(tmp_list)
 
     util.make_list_to_excel(WORK_DIR + "result_multi_processing", result_list)
+
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
