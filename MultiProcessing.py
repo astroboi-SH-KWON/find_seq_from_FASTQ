@@ -80,9 +80,9 @@ def multi_processing_w_solo_fastq():
         print("will use : ", str(MULTI_CNT))
         pool = mp.Pool(processes=MULTI_CNT)
         ## analyze FASTQ seq after barcode seq
-        # pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
+        pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
         ## analyze whole FASTQ seq
-        pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
+        # pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
 
         merge_dict = logic.merge_pool_list(pool_list)
         pool.close()
