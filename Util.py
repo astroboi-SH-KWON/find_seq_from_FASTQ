@@ -1,13 +1,7 @@
-from os import listdir
-from os.path import isfile, join
-import pandas as pd
 import openpyxl
-from time import clock
-import random
-import math
-import Bio as bio
 from Bio import SeqIO
 import glob
+import os
 
 class Utils:
     def __init__(self):
@@ -207,3 +201,45 @@ class Utils:
 
         workbook.save(filename=path + self.ext_xlsx)
 
+    def read_tsv_ignore_N_line(self, path, n_line=1, deli_str="\t"):
+        result_list = []
+        with open(path, "r") as f:
+            for ignr_line in range(n_line):
+                header = f.readline()
+                print(header)
+            while True:
+                tmp_line = f.readline().replace("\n", "")
+                if tmp_line == '':
+                    break
+
+                result_list.append(tmp_line.split(deli_str))
+        return result_list
+
+    """
+    :param
+        init_split_file = {'big_file_path': WORK_DIR + FASTQ + TRGT_FASTQ_NM + TRGT_FASTQ_EXT
+                            , 'num_row': 4000000
+                            , 'splited_files_dir': WORK_DIR + FASTQ + TRGT_FASTQ_NM + "/"
+                            , 'output_file_nm': TRGT_FASTQ_NM
+                            , 'output_file_ext': TRGT_FASTQ_EXT
+                       }
+    """
+    def split_big_file_by_row(self, init):
+        print('options', str(init))
+        big_file_path = init['big_file_path']
+        num_row = init['num_row']
+        splited_files_dir = init['splited_files_dir']
+        output_file_nm = init['output_file_nm']
+        output_file_ext = init['output_file_ext']
+
+        os.makedirs(splited_files_dir, exist_ok=True)
+
+        with open(big_file_path) as fin:
+            fout = open('{}/{}_{}{}'.format(splited_files_dir, output_file_nm, '0', output_file_ext), "w")
+            for i, line in enumerate(fin):
+                fout.write(line)
+                if (i + 1) % num_row == 0:
+                    fout.close()
+                    fout = open('{}/{}_{}{}'.format(splited_files_dir, output_file_nm, str(i // num_row + 1), output_file_ext), "w")
+
+            fout.close()
