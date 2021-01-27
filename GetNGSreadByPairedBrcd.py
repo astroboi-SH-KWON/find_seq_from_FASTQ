@@ -17,6 +17,7 @@ if SYSTEM_NM == 'Linux':
     FASTQ_DIR = '/media/backup/minyoung_precancer_1st_backup/run_CRISPResso2_in_cmd_1st/'
 else:
     # DEV
+    WORK_DIR = "D:/000_WORK/JangHyeWon_LeeMinYung/20200703/WORK_DIR/"
     FASTQ_DIR = "D:/000_WORK/JangHyeWon_LeeMinYung/20200703/WORK_DIR/"
 
 FASTQ = 'FASTQ/'
@@ -145,9 +146,54 @@ def split_trgt_fastq_file():
     util.split_big_file_by_row(init_split_file)
 
 
+def multi_make_files_by_brcd_from_NGS_read_by_brcd_aftr_split():
+    paired_brcd_arr = [brcd1 + '_' + brcd2 for brcd2 in BRCD_ARR for brcd1 in BRCD_ARR]
+
+    # divide data_list by MULTI_CNT
+    splited_paired_brcd_arr = np.array_split(paired_brcd_arr, MULTI_CNT)
+    paired_brcd_arr.clear()
+    print("platform.system() : ", SYSTEM_NM)
+    print("total cpu_count : ", str(TOTAL_CPU))
+    print("will use : ", str(MULTI_CNT))
+    pool = mp.Pool(processes=MULTI_CNT)
+
+    pool.map(make_files_by_brcd, splited_paired_brcd_arr)
+    pool.close()
+
+
+def make_files_by_brcd(paired_brcd_arr):
+    util = Util.Utils()
+    fastq_dir = TRGT_FASTQ_NM + "/"
+    sources = util.get_files_from_dir(FASTQ_DIR + FASTQ + fastq_dir + TRGT_FASTQ_NM + '*_result.txt')
+
+    for paired_brcd in paired_brcd_arr:
+        result_list = []
+        for result_fl_path in sources:
+            brcd_ngs_read_list = util.read_tsv_ignore_N_line(result_fl_path, 0)
+            for brcd_ngs_read_arr in brcd_ngs_read_list:
+                if paired_brcd != brcd_ngs_read_arr[0]:
+                    continue
+                result_list.append(brcd_ngs_read_arr)
+
+        if len(result_list) == 0:
+            continue
+
+        result_dir_path = FASTQ_DIR + FASTQ + fastq_dir + 'result_by_1500x1500_brcd/'
+        os.makedirs(result_dir_path, exist_ok=True)
+        with open(result_dir_path + paired_brcd + '.txt', 'w') as f_ou:
+            print('make file for paired barcode [', paired_brcd, ']')
+            for result_arr in result_list:
+                tmp_line = ''
+                for tmp_val in result_arr:
+                    tmp_line = tmp_line + tmp_val + '\t'
+                f_ou.write(tmp_line[:-1] + '\n')
+        result_list.clear()
+
+
 if __name__ == '__main__':
     start_time = time.perf_counter()
     print("start [ " + PROJECT_NAME + " ]>>>>>>>>>>>>>>>>>>")
     # split_trgt_fastq_file()
-    multi_NGS_read_by_brcd_aftr_split()
+    # multi_NGS_read_by_brcd_aftr_split()
+    multi_make_files_by_brcd_from_NGS_read_by_brcd_aftr_split()
     print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))
