@@ -105,7 +105,7 @@ class Logics:
                     else:
                         result_dict[tttt_brcd]["TTTT_Barcode_cnt"] += 1
 
-                    # TODO check seq after tttt_brcd seq
+                    # check seq after tttt_brcd seq
                     fastq_seq_aft_barcd = fastq_seq[fastq_seq.index(tttt_brcd) + len(tttt_brcd):]
                     # check original seq
                     if ori_seq in fastq_seq_aft_barcd:
@@ -254,3 +254,15 @@ class Logics:
 
 
         return result_dict
+
+    def merge_pool_list_to_result_dict(self, pool_list, mege_dict):
+        for data_dict in pool_list:
+            for barcd_key, val_dict in data_dict.items():
+                if barcd_key in mege_dict:
+                    mege_dict[barcd_key]["TTTT_Barcode_cnt"] += val_dict["TTTT_Barcode_cnt"]
+                    mege_dict[barcd_key]["Original sequence"] += val_dict["Original sequence"]
+                    mege_dict[barcd_key]["Edited sequence"] += val_dict["Edited sequence"]
+                else:
+                    mege_dict.update({barcd_key: val_dict})
+
+        # return mege_dict

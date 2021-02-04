@@ -22,7 +22,7 @@ FASTQ = 'FASTQ/'
 BARCD_SEQ_FILE = "barcode_seq/210113_Novaseq_find_seq_from_FASTQ_index.txt"
 
 TOTAL_CPU = mp.cpu_count()
-MULTI_CNT = int(TOTAL_CPU*0.5)
+MULTI_CNT = int(TOTAL_CPU*0.8)
 
 ############### end setting env ################
 
@@ -46,9 +46,9 @@ def multi_processing():
     print("will use : ", str(MULTI_CNT))
     pool = mp.Pool(processes=MULTI_CNT)
     ## analyze FASTQ seq after barcode seq
-    # pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
+    pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
     ## analyze whole FASTQ seq
-    pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
+    # pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
 
     merge_dict = logic.merge_pool_list(pool_list)
 
@@ -59,16 +59,17 @@ def multi_processing_w_solo_fastq():
     util = Util.Utils()
 
     # fastq file name without ext
-    solo_fastg_fl_nm_list = [
-         "Monkey_PE_2K--TAATGCGC-GCCTCTAT_1"
-        , "Monkey_PE_2K--GAATTCGT-AGGCTATA_1"
+    solo_fastq_fl_nm_list = [
+         "Monkey_PE_2K_rep2_add"
+        , "Monkey_PE_2K_Rep1_add"
+        , "Monkey_PE_2K_Un"
     ]
 
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
 
     logic = Logic.Logics(brcd_list)
 
-    for fastq_fl_nm in solo_fastg_fl_nm_list:
+    for fastq_fl_nm in solo_fastq_fl_nm_list:
         fastq_list = util.get_FASTQ_seq_list(WORK_DIR + FASTQ + fastq_fl_nm + '.fastq')
 
         # divide data_list by MULTI_CNT
@@ -90,6 +91,61 @@ def multi_processing_w_solo_fastq():
 
         util.make_dict_to_excel(WORK_DIR + "output/result_" + fastq_fl_nm, merge_dict)
         merge_dict.clear()
+
+
+def multi_processing_split_big_files_then_find_seq_from_FASTQ():
+    print('multi_processing_split_big_files_then_find_seq_from_FASTQ')
+    util = Util.Utils()
+
+    brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
+    logic = Logic.Logics(brcd_list)
+
+    # fastq file name without ext
+    big_fastq_fl_nm_list = [
+        "Monkey_PE_2K_Un"
+    ]
+    fastq_ext = '.fastq'
+
+    for fastq_fl_nm in big_fastq_fl_nm_list:
+        # split big file
+        split_init = {'big_file_path': WORK_DIR + FASTQ + fastq_fl_nm + fastq_ext
+                            , 'num_row': 4000000
+                            , 'splited_files_dir': WORK_DIR + FASTQ + fastq_fl_nm + "/"
+                            , 'output_file_nm': fastq_fl_nm
+                            , 'output_file_ext': fastq_ext
+
+        }
+        util.split_big_file_by_row(split_init)
+
+        # get splited_files path
+        sources = util.get_files_from_dir(split_init['splited_files_dir'] + '*.fastq')
+
+        result_dict = {}
+        for splited_fastq_fl in sources:
+            print("get_FASTQ_seq_list :", splited_fastq_fl)
+            fastq_list = util.get_FASTQ_seq_list(splited_fastq_fl)
+
+            # divide data_list by MULTI_CNT
+            splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
+            fastq_list.clear()
+
+            print("platform.system() : ", SYSTEM_NM)
+            print("total cpu_count : ", str(TOTAL_CPU))
+            print("will use : ", str(MULTI_CNT))
+            pool = mp.Pool(processes=MULTI_CNT)
+            ## analyze FASTQ seq after barcode seq
+            pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
+            ## analyze whole FASTQ seq
+            # pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
+
+            print("merge_pool_list_to_result_dict")
+            logic.merge_pool_list_to_result_dict(pool_list, result_dict)
+            pool.close()
+            pool_list[:] = []
+
+        print("make excel file")
+        util.make_dict_to_excel(WORK_DIR + "output/result_" + fastq_fl_nm, result_dict)
+        result_dict.clear()
 
 
 def multi_processing_test():
@@ -122,5 +178,6 @@ if __name__ == '__main__':
     start_time = time.perf_counter()
     print("start >>>>>>>>>>>>>>>>>>")
     # multi_processing()
-    multi_processing_w_solo_fastq()
+    # multi_processing_w_solo_fastq()
+    multi_processing_split_big_files_then_find_seq_from_FASTQ()
     print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))
