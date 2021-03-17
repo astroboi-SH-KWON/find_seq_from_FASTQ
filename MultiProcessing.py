@@ -15,26 +15,33 @@ if SYSTEM_NM == 'Linux':
     pass
 else:
     # DEV
-    WORK_DIR = "D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/"
+    # WORK_DIR = "D:/000_WORK/JangHyeWon_ShinJeongHong/20200604/WORK_DIR/"
+    WORK_DIR = "D:/000_WORK/LeeMinYung/20210316/WORK_DIR/"  # 20210316
 
 FASTQ = 'FASTQ/'
 # BARCD_SEQ_FILE = "barcode_seq/210112_Novaseq_find_seq_from_FASTQ_index.txt"
-BARCD_SEQ_FILE = "barcode_seq/210113_Novaseq_find_seq_from_FASTQ_index.txt"
+# BARCD_SEQ_FILE = "barcode_seq/210113_Novaseq_find_seq_from_FASTQ_index.txt"
+# BARCD_SEQ_FILE = "barcode_seq/210316_find seq_MY_pig_PE_1st analysis.txt"  # 20210316
+BARCD_SEQ_FILE = "barcode_seq/210316_find seq_MY_pig_PE_2nd analysis_pam coedited.txt"  # 20210316
+# for multi_processing_w_brcd_arr()
+BARCD_FL_ARR = ["barcode_seq/210317_find seq_MY_1st.txt", "barcode_seq/210317_find seq_MY_2nd.txt"]  # 20210317
 
 TOTAL_CPU = mp.cpu_count()
-MULTI_CNT = int(TOTAL_CPU*0.8)
+MULTI_CNT = int(TOTAL_CPU*0.5)
 
 ############### end setting env ################
-
 
 def multi_processing():
     util = Util.Utils()
 
+    print("read FASTQ files path")
     sources = util.get_files_from_dir(WORK_DIR + "FASTQ/" + '*.fastq')
+    print("read barcode list")
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
 
     logic = Logic.Logics(brcd_list)
 
+    print("get_FASTQ_seq_dict")
     fastq_list = []
     for sources_list in util.get_FASTQ_seq_dict(sources).values():
         fastq_list.extend(sources_list)
@@ -52,7 +59,45 @@ def multi_processing():
 
     merge_dict = logic.merge_pool_list(pool_list)
 
-    util.make_dict_to_excel(WORK_DIR + "output/result_count", merge_dict)
+    util.make_dict_to_excel(
+        WORK_DIR + "output/result_count_" + BARCD_SEQ_FILE.replace("barcode_seq/", "").replace(".txt", ""), merge_dict)
+
+
+def multi_processing_w_brcd_arr():  # 20210317
+    util = Util.Utils()
+    fastq_fl_arr = [
+                    "503_707.fastq"
+                    , "504_708.fastq"
+                    ]
+
+    for brcd_fl in BARCD_FL_ARR:
+        print("read barcode list")
+        brcd_list = util.read_tb_txt(WORK_DIR + brcd_fl)
+
+        logic = Logic.Logics(brcd_list)
+
+        for fastq_fl in fastq_fl_arr:
+            print("get_FASTQ_seq_list : ", fastq_fl)
+            fastq_list = util.get_FASTQ_seq_list(WORK_DIR + FASTQ + fastq_fl)
+
+            # divide data_list by MULTI_CNT
+            splited_fastq_list = np.array_split(fastq_list, MULTI_CNT)
+            print("platform.system() : ", SYSTEM_NM)
+            print("total cpu_count : ", str(TOTAL_CPU))
+            print("will use : ", str(MULTI_CNT))
+            pool = mp.Pool(processes=MULTI_CNT)
+            ## analyze FASTQ seq after barcode seq
+            pool_list = pool.map(logic.get_dict_multi_p_seq_from_FASTQ, splited_fastq_list)
+            ## analyze whole FASTQ seq
+            # pool_list = pool.map(logic.get_dict_multi_p_seq_from_whole_FASTQ, splited_fastq_list)
+
+            merge_dict = logic.merge_pool_list(pool_list)
+            pool.close()
+            pool_list[:] = []
+
+            util.make_dict_to_excel(
+                WORK_DIR + "output/result_count_" + fastq_fl.replace(".fastq", "") + "_" + brcd_fl.replace(
+                    "barcode_seq/", "").replace(".txt", ""), merge_dict)
 
 
 def multi_processing_w_solo_fastq():
@@ -102,7 +147,8 @@ def multi_processing_split_big_files_then_find_seq_from_FASTQ():
 
     # fastq file name without ext
     big_fastq_fl_nm_list = [
-        "Monkey_PE_2K_Un"
+        "MY_pig_PE_NG"
+        , "MY_pig_PE_NGG"
     ]
     fastq_ext = '.fastq'
 
@@ -144,7 +190,10 @@ def multi_processing_split_big_files_then_find_seq_from_FASTQ():
             pool_list[:] = []
 
         print("make excel file")
-        util.make_dict_to_excel(WORK_DIR + "output/result_" + fastq_fl_nm, result_dict)
+        util.make_dict_to_excel(
+            WORK_DIR + "output/result_" + fastq_fl_nm + "_" + BARCD_SEQ_FILE.replace("barcode_seq/", "").replace(".txt",
+                                                                                                                 ""),
+            result_dict)
         result_dict.clear()
 
 
@@ -179,5 +228,6 @@ if __name__ == '__main__':
     print("start >>>>>>>>>>>>>>>>>>")
     # multi_processing()
     # multi_processing_w_solo_fastq()
-    multi_processing_split_big_files_then_find_seq_from_FASTQ()
+    # multi_processing_split_big_files_then_find_seq_from_FASTQ()
+    multi_processing_w_brcd_arr()
     print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))

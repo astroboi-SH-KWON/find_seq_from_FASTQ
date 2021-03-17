@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e43ad5c-e727-4e0d-8c88-ede73d853d3d" name="Default Changelist" comment="analyze FASTQ seq after barcode seq">
+    <list default="true" id="9e43ad5c-e727-4e0d-8c88-ede73d853d3d" name="Default Changelist" comment="add multi_processing_split_big_files_then_find_seq_from_FASTQ() in MultiProcessing.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MultiProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/MultiProcessing.py" afterDir="false" />
     </list>
     <list id="b9c7044a-a66f-4d6b-be8e-6ce5de18e3ec" name="import time" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,28 @@
       <recent name="D:\Github\find_seq_from_FASTQ" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Multi_2seq_to_1fastq">
+  <component name="RunManager" selected="Python.GetNGSreadByPairedBrcd">
+    <configuration name="GetNGSreadByPairedBrcd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="find_seq_from_FASTQ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GetNGSreadByPairedBrcd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="find_seq_from_FASTQ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,28 +92,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="MultiProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="find_seq_from_FASTQ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiProcessing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GetNGSreadByPairedBrcd" />
         <item itemvalue="Python.Multi_2seq_to_1fastq" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.MultiProcessing_4seq" />
-        <item itemvalue="Python.MultiProcessing" />
       </list>
     </recent_temporary>
   </component>
@@ -269,7 +268,35 @@
       <option name="project" value="LOCAL" />
       <updated>1610509052194</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add GetNGSreadByPairedBrcd.py">
+      <created>1611712469130</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1611712469130</updated>
+    </task>
+    <task id="LOCAL-00012" summary="make_files_by_brcd">
+      <created>1611788257682</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611788257682</updated>
+    </task>
+    <task id="LOCAL-00013" summary="get_NGS_read_by_selected_PairedBrcd">
+      <created>1612134951999</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1612134951999</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add multi_processing_split_big_files_then_find_seq_from_FASTQ() in MultiProcessing.py">
+      <created>1612410634526</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1612410634526</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,20 +321,48 @@
     <MESSAGE value="claer obj" />
     <MESSAGE value="BARCD_SEQ_FILE = &quot;barcode_seq/210113_Novaseq_find_seq_from_FASTQ_index.txt&quot;" />
     <MESSAGE value="analyze FASTQ seq after barcode seq" />
-    <option name="LAST_COMMIT_MESSAGE" value="analyze FASTQ seq after barcode seq" />
+    <MESSAGE value="add GetNGSreadByPairedBrcd.py" />
+    <MESSAGE value="make_files_by_brcd" />
+    <MESSAGE value="get_NGS_read_by_selected_PairedBrcd" />
+    <MESSAGE value="add multi_processing_split_big_files_then_find_seq_from_FASTQ() in MultiProcessing.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add multi_processing_split_big_files_then_find_seq_from_FASTQ() in MultiProcessing.py" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1920" y="339" key="DiffContextDialog" timestamp="1611712489476">
+      <screen x="1920" y="-155" width="1080" height="1890" />
+    </state>
+    <state x="1920" y="339" key="DiffContextDialog/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1611712489476" />
+    <state width="1836" height="180" key="GridCell.Tab.0.bottom" timestamp="1612235684903">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1836" height="180" key="GridCell.Tab.0.bottom/0.0.1858.1080/1920.-155.1080.1890@0.0.1858.1080" timestamp="1612235684903" />
+    <state width="1058" height="562" key="GridCell.Tab.0.bottom/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1611903973290" />
+    <state width="1836" height="180" key="GridCell.Tab.0.center" timestamp="1612235684903">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1836" height="180" key="GridCell.Tab.0.center/0.0.1858.1080/1920.-155.1080.1890@0.0.1858.1080" timestamp="1612235684903" />
+    <state width="1058" height="562" key="GridCell.Tab.0.center/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1611903973290" />
+    <state width="1836" height="180" key="GridCell.Tab.0.left" timestamp="1612235684903">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1836" height="180" key="GridCell.Tab.0.left/0.0.1858.1080/1920.-155.1080.1890@0.0.1858.1080" timestamp="1612235684903" />
+    <state width="1058" height="562" key="GridCell.Tab.0.left/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1611903973290" />
+    <state width="1836" height="180" key="GridCell.Tab.0.right" timestamp="1612235684903">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1836" height="180" key="GridCell.Tab.0.right/0.0.1858.1080/1920.-155.1080.1890@0.0.1858.1080" timestamp="1612235684903" />
+    <state width="1058" height="562" key="GridCell.Tab.0.right/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1611903973290" />
     <state x="1967" y="435" key="SettingsEditor" timestamp="1610431598013">
       <screen x="1920" y="-155" width="1080" height="1890" />
     </state>
     <state x="1967" y="435" key="SettingsEditor/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1610431598013" />
-    <state x="2051" y="522" key="Vcs.Push.Dialog.v2" timestamp="1610509059699">
+    <state x="2051" y="522" key="Vcs.Push.Dialog.v2" timestamp="1612410642312">
       <screen x="1920" y="-155" width="1080" height="1890" />
     </state>
-    <state x="2051" y="522" key="Vcs.Push.Dialog.v2/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1610509059699" />
-    <state x="490" y="0" width="859" height="1167" maximized="true" key="dock-window-1" timestamp="1611710885492">
+    <state x="2051" y="522" key="Vcs.Push.Dialog.v2/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1612410642312" />
+    <state x="922" y="0" width="943" height="1087" key="dock-window-1" timestamp="1615960292760">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="490" y="0" width="859" height="1167" maximized="true" key="dock-window-1/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1611710885492" />
+    <state x="922" y="0" width="943" height="1087" key="dock-window-1/0.0.1858.1080/1920.-155.1080.1890@1920.-155.1080.1890" timestamp="1615960292760" />
   </component>
 </project>
