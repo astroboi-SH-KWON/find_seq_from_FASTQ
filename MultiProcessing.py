@@ -7,6 +7,7 @@ import platform
 
 import Util
 import Logic
+import LogicPrep
 ############### start to set env ################
 WORK_DIR = os.getcwd() + "/"
 SYSTEM_NM = platform.system()
@@ -22,11 +23,17 @@ FASTQ = 'FASTQ/'
 # BARCD_SEQ_FILE = "barcode_seq/210112_Novaseq_find_seq_from_FASTQ_index.txt"
 # BARCD_SEQ_FILE = "barcode_seq/210113_Novaseq_find_seq_from_FASTQ_index.txt"
 # BARCD_SEQ_FILE = "barcode_seq/210316_find seq_MY_pig_PE_1st analysis.txt"  # 20210316
-BARCD_SEQ_FILE = "barcode_seq/210316_find seq_MY_pig_PE_2nd analysis_pam coedited.txt"  # 20210316
+# BARCD_SEQ_FILE = "barcode_seq/210316_find seq_MY_pig_PE_2nd analysis_pam coedited.txt"  # 20210316
+BARCD_SEQ_FILE = "barcode_seq/19k_EB.txt"  # 20210507
 # for multi_processing_w_brcd_arr()
 BARCD_FL_ARR = [
-                "barcode_seq/3_5k_pig_nggki_find seq_MY_target and pam.txt"
-                , "barcode_seq/3_5k_pig_nggki_find seq_MY_target only.txt"
+                "barcode_seq/2104226.txt"
+                , "barcode_seq/2104224.txt"
+                , "barcode_seq/2104222.txt"
+                , "barcode_seq/2104223.txt"
+                , "barcode_seq/2104225.txt"
+                , "barcode_seq/2104227.txt"
+                , "barcode_seq/2104221.txt"
                 ]  # 20210317
 
 TOTAL_CPU = mp.cpu_count()
@@ -69,6 +76,7 @@ def multi_processing():
 def multi_processing_split_big_files_then_find_seq_from_FASTQ_w_brcd_arr():  #20210419
     print('multi_processing_split_big_files_then_find_seq_from_FASTQ_w_brcd_arr')
     util = Util.Utils()
+    logic_prep = LogicPrep.LogicPreps()
 
     brcd_arr = [
                 "barcode_seq/3_5k_pig_nggki_find seq_MY_target and pam.txt"
@@ -122,6 +130,7 @@ def multi_processing_split_big_files_then_find_seq_from_FASTQ_w_brcd_arr():  #20
                 pool.close()
                 pool_list[:] = []
 
+            logic_prep.add_missing_brcd_to_dict(brcd_list, result_dict)
             print("make excel file")
             util.make_dict_to_excel(
                 WORK_DIR + "output/result_" + fastq_fl_nm + "_" + brcd_path.replace("barcode_seq/", "").replace(".txt",
@@ -132,6 +141,8 @@ def multi_processing_split_big_files_then_find_seq_from_FASTQ_w_brcd_arr():  #20
 
 def multi_processing_w_brcd_arr():  # 20210317
     util = Util.Utils()
+    logic_prep = LogicPrep.LogicPreps()
+
     fastq_fl_arr = [
                     "pig35k_ngpe_plasmid_1.fastq"
                     , "pig35k_ngpe_plasmid_2.fastq"
@@ -162,6 +173,7 @@ def multi_processing_w_brcd_arr():  # 20210317
             pool.close()
             pool_list[:] = []
 
+            logic_prep.add_missing_brcd_to_dict(brcd_list, merge_dict)
             util.make_dict_to_excel(
                 WORK_DIR + "output/result_count_" + fastq_fl.replace(".fastq", "") + "_" + brcd_fl.replace(
                     "barcode_seq/", "").replace(".txt", ""), merge_dict)
@@ -169,6 +181,7 @@ def multi_processing_w_brcd_arr():  # 20210317
 
 def multi_processing_w_solo_fastq():
     util = Util.Utils()
+    logic_prep = LogicPrep.LogicPreps()
 
     # fastq file name without ext
     solo_fastq_fl_nm_list = [
@@ -201,6 +214,7 @@ def multi_processing_w_solo_fastq():
         pool.close()
         pool_list[:] = []
 
+        logic_prep.add_missing_brcd_to_dict(brcd_list, merge_dict)
         util.make_dict_to_excel(WORK_DIR + "output/result_" + fastq_fl_nm, merge_dict)
         merge_dict.clear()
 
@@ -208,14 +222,15 @@ def multi_processing_w_solo_fastq():
 def multi_processing_split_big_files_then_find_seq_from_FASTQ():
     print('multi_processing_split_big_files_then_find_seq_from_FASTQ')
     util = Util.Utils()
+    logic_prep = LogicPrep.LogicPreps()
 
     brcd_list = util.read_tb_txt(WORK_DIR + BARCD_SEQ_FILE)
     logic = Logic.Logics(brcd_list)
 
     # fastq file name without ext
     big_fastq_fl_nm_list = [
-        "MY_pig_PE_NG"
-        , "MY_pig_PE_NGG"
+        "19k_ramu"
+        , "19k_my"
     ]
     fastq_ext = '.fastq'
 
@@ -256,6 +271,7 @@ def multi_processing_split_big_files_then_find_seq_from_FASTQ():
             pool.close()
             pool_list[:] = []
 
+        logic_prep.add_missing_brcd_to_dict(brcd_list, result_dict)
         print("make excel file")
         util.make_dict_to_excel(
             WORK_DIR + "output/result_" + fastq_fl_nm + "_" + BARCD_SEQ_FILE.replace("barcode_seq/", "").replace(".txt",
@@ -290,12 +306,31 @@ def multi_processing_test():
     util.make_list_to_excel(WORK_DIR + "result_multi_processing", result_list)
 
 
+def split_big_file():
+    print('st split_big_file')
+    fastq_fl_nm = 'Kcnq4 p.L47P'
+    fastq_ext = '.fastq'
+
+    util = Util.Utils()
+    # split big file
+    split_init = {'big_file_path': WORK_DIR + FASTQ + fastq_fl_nm + fastq_ext
+        , 'num_row': 1000000  # 4000000
+        , 'splited_files_dir': WORK_DIR + FASTQ + fastq_fl_nm + "/"
+        , 'output_file_nm': fastq_fl_nm
+        , 'output_file_ext': fastq_ext
+
+                  }
+    util.split_big_file_by_row(split_init)
+    print('DONE split_big_file')
+
+
 if __name__ == '__main__':
     start_time = time.perf_counter()
     print("start >>>>>>>>>>>>>>>>>>")
     # multi_processing()
     # multi_processing_w_solo_fastq()
-    # multi_processing_split_big_files_then_find_seq_from_FASTQ()
-    multi_processing_w_brcd_arr()
+    multi_processing_split_big_files_then_find_seq_from_FASTQ()
+    # multi_processing_w_brcd_arr()
     # multi_processing_split_big_files_then_find_seq_from_FASTQ_w_brcd_arr()
+    # split_big_file()
     print("::::::::::: %.2f seconds ::::::::::::::" % (time.perf_counter() - start_time))
