@@ -4,9 +4,9 @@ import Util
 import LogicPrep
 
 class Logics:
-    def __init__(self, brcd_list):
+    def __init__(self, brcd_obj):
         self.tmp = ""
-        self.brcd_list = brcd_list
+        self.brcd_obj = brcd_obj
 
     def get_seq_from_FASTQ(self, brcd_list, fastq_dict):
         result_list = []
@@ -35,7 +35,8 @@ class Logics:
 
     def get_multi_seq_from_FASTQ(self, fastq_list, idx_arr, result_list):
         print("get_multi_seq_from_FASTQ starts " + str(idx_arr[0]) + " ~ " + str(idx_arr[1]))
-        for val_arr in self.brcd_list:
+        # self.brcd_obj is list
+        for val_arr in self.brcd_obj:
             for fastq_seq in fastq_list[idx_arr[0]:idx_arr[1]]:
                 # check barcode
                 if val_arr[1] in fastq_seq:
@@ -59,7 +60,8 @@ class Logics:
     def get_list_multi_p_seq_from_FASTQ(self, fastq_list):
         result_list = []
         print("get_list_multi_p_seq_from_FASTQ starts ")
-        for val_arr in self.brcd_list:
+        # self.brcd_obj is list
+        for val_arr in self.brcd_obj:
             index_name = val_arr[0]
             tttt_brcd = val_arr[1].upper()
             ori_seq = val_arr[2].upper()
@@ -91,7 +93,8 @@ class Logics:
     def get_dict_multi_p_seq_from_FASTQ(self, fastq_list):
         result_dict = {}
         print("get_dict_multi_p_seq_from_FASTQ starts ")
-        for val_arr in self.brcd_list:
+        # self.brcd_obj is list
+        for val_arr in self.brcd_obj:
             tttt_brcd = val_arr[1].upper()
             ori_seq = val_arr[2].upper()
             edit_seq = val_arr[3].upper()
@@ -120,7 +123,8 @@ class Logics:
     def get_dict_multi_p_seq_from_whole_FASTQ(self, fastq_list):
         result_dict = {}
         print("get_dict_multi_p_seq_from_whole_FASTQ starts ")
-        for val_arr in self.brcd_list:
+        # self.brcd_obj is list
+        for val_arr in self.brcd_obj:
             tttt_brcd = val_arr[1].upper()
             ori_seq = val_arr[2].upper()
             edit_seq = val_arr[3].upper()
@@ -147,7 +151,8 @@ class Logics:
     def get_dict_multi_p_4seq_from_whole_FASTQ(self, fastq_list):
         result_dict = {}
         print("get_dict_multi_p_4seq_from_whole_FASTQ starts ")
-        for val_arr in self.brcd_list:
+        # self.brcd_obj is list
+        for val_arr in self.brcd_obj:
             tttt_brcd = val_arr[1].upper()
             wout_edit_seq = val_arr[2].upper()
             edit_seq = val_arr[3].upper()
@@ -214,7 +219,8 @@ class Logics:
 
     def get_dict_multi(self, bc_list):
         print("start get_dict_multi")
-        fastq_dir = self.brcd_list[0]
+        # self.brcd_obj is list
+        fastq_dir = self.brcd_obj[0]
         result_dict = {}
         for bc_arr in bc_list:
             fastq_nm = bc_arr[0]
@@ -251,7 +257,6 @@ class Logics:
             except Exception as err:
                 print("path : " + fastq_dir + fastq_nm)
                 print(err)
-
 
         return result_dict
 
