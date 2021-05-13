@@ -37,7 +37,7 @@ BARCD_FL_ARR = [
                 ]  # 20210317
 
 TOTAL_CPU = mp.cpu_count()
-MULTI_CNT = int(TOTAL_CPU*0.5)
+MULTI_CNT = int(TOTAL_CPU*0.8)
 
 ############### end setting env ################
 

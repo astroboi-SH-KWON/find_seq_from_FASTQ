@@ -82,3 +82,20 @@ class LogicPreps:
                 result_dict.update(
                     {tttt_brcd: {"Original sequence": 0, "Edited sequence": 0, "TTTT_Barcode_cnt": 0}})
         print("DONE ::: add_missing_brcd_to_dict")
+
+    def list_to_dict_by_ele_key(self, brcd_list, idx):
+        print('st list_to_dict_by_ele_key')
+        result_dict = {}
+        for brcd_arr in brcd_list:
+            key = brcd_arr[idx].upper()
+            if key == '':
+                continue
+
+            if key in result_dict:
+                print(key, ':::::::: duplicated')
+                result_dict[key].append(brcd_arr)
+            else:
+                result_dict.update({key: [brcd_arr]})
+
+        print('DONE list_to_dict_by_ele_key')
+        return result_dict

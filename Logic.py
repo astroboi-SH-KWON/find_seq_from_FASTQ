@@ -7,6 +7,8 @@ class Logics:
     def __init__(self, brcd_obj):
         self.tmp = ""
         self.brcd_obj = brcd_obj
+        self.brcd_pos_arr = [0, 0]
+        self.brcd_len = 20
 
     def get_seq_from_FASTQ(self, brcd_list, fastq_dict):
         result_list = []
@@ -89,6 +91,53 @@ class Logics:
 
                     result_list.append(tmp_arr)
         return result_list
+
+    def check_barcode_freq(self, brcd_arr, fastq_seq, result_dict):
+        tttt_brcd = brcd_arr[1].upper()
+        ori_seq = brcd_arr[2].upper()
+        edit_seq = brcd_arr[3].upper()
+
+        if tttt_brcd not in result_dict:
+            result_dict.update(
+                {tttt_brcd: {"Original sequence": 0, "Edited sequence": 0, "TTTT_Barcode_cnt": 1}})
+        else:
+            result_dict[tttt_brcd]["TTTT_Barcode_cnt"] += 1
+
+        # check seq after tttt_brcd seq
+        fastq_seq_aft_barcd = fastq_seq[fastq_seq.index(tttt_brcd) + len(tttt_brcd):]
+        # check original seq
+        if ori_seq in fastq_seq_aft_barcd:
+            result_dict[tttt_brcd]["Original sequence"] += 1
+
+        # check edited seq
+        if edit_seq in fastq_seq_aft_barcd:
+            result_dict[tttt_brcd]["Edited sequence"] += 1
+
+    def get_dict_by_brcd_w_brcd_range_from_FASTQ(self, fastq_list):
+        result_dict = {}
+        print("st get_dict_by_brcd_w_brcd_range_from_FASTQ")
+        # self.brcd_obj is dict
+        brcd_dict = self.brcd_obj
+
+        for fastq_str in fastq_list:
+            fastq_seq = fastq_str.upper()
+
+            en_brcd_i = self.brcd_pos_arr[1]
+            if en_brcd_i < 0:
+                en_brcd_i += len(fastq_seq)
+                if en_brcd_i + self.brcd_len > len(fastq_seq):
+                    en_brcd_i = len(fastq_seq) - self.brcd_len
+            elif en_brcd_i == 0 or en_brcd_i + self.brcd_len > len(fastq_seq):
+                en_brcd_i = len(fastq_seq) - self.brcd_len
+
+            for brcd_i in range(self.brcd_pos_arr[0], en_brcd_i):
+                candi_brcd = fastq_seq[brcd_i: brcd_i + self.brcd_len]
+
+                if candi_brcd in brcd_dict:
+                    self.check_barcode_freq(brcd_dict[candi_brcd][0], fastq_seq, result_dict)
+
+        print("DONE get_dict_by_brcd_w_brcd_range_from_FASTQ")
+        return result_dict
 
     def get_dict_multi_p_seq_from_FASTQ(self, fastq_list):
         result_dict = {}
@@ -271,3 +320,5 @@ class Logics:
                     mege_dict.update({barcd_key: val_dict})
 
         # return mege_dict
+
+
