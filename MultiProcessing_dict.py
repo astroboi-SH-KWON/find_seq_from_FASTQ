@@ -117,7 +117,7 @@ def multi_processing_dict_w_brcd_arr():
     for brcd_fl in BARCD_FL_ARR:
         print("read barcode list")
         brcd_list = util.read_tb_txt(WORK_DIR + BRCD + brcd_fl)
-        brcd_dict = logic_prep.list_to_dict_by_ele_key(brcd_list, 0)
+        brcd_dict = logic_prep.list_to_dict_by_ele_key(brcd_list, 1)
         logic = Logic.Logics(brcd_dict)
 
         # set bar_code estimated start and end position from fastq, default : [0, 0]
