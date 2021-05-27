@@ -9,6 +9,24 @@ class Logics:
         self.brcd_obj = brcd_obj
         self.brcd_pos_arr = [0, 0]
         self.brcd_len = 20
+        self.rev_com_flag = False
+
+    def complement_char(self, ch):
+        complement_char_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A', 'N': 'N'}
+        try:
+            return complement_char_dict[ch]
+        except:
+            print("complement_char : [" + ch + "]")
+            raise Exception
+
+    def make_complement_string(self, trgt_seq):
+        comp_seq = ""
+        for ch in trgt_seq:
+            try:
+                comp_seq += self.complement_char(ch)
+            except:
+                raise Exception
+        return comp_seq
 
     def get_seq_from_FASTQ(self, brcd_list, fastq_dict):
         result_list = []
@@ -121,6 +139,8 @@ class Logics:
 
         for fastq_str in fastq_list:
             fastq_seq = fastq_str.upper()
+            if self.rev_com_flag:
+                fastq_seq = self.make_complement_string(fastq_str.upper())[::-1]
 
             en_brcd_i = self.brcd_pos_arr[1]
             if en_brcd_i < 0:
