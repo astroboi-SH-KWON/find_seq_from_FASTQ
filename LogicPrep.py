@@ -99,3 +99,25 @@ class LogicPreps:
 
         print('DONE list_to_dict_by_ele_key')
         return result_dict
+
+    def check_brcd_length(self, brcd_dict, brcd_path):
+        print("st check_brcd_length")
+        cnt = 0
+        ini_brcd_len = 0
+        for brcd_key in brcd_dict.keys():
+            if brcd_key == '':
+                print("there is empty key value")
+                continue
+                # raise Exception
+            if cnt == 0:
+                ini_brcd_len = len(brcd_key)
+                new_brcd_len = len(brcd_key)
+            else:
+                new_brcd_len = len(brcd_key)
+
+            if ini_brcd_len != new_brcd_len:
+                print("check barcode length in input file :", brcd_path)
+                exit()
+            cnt += 1
+        print("DONE check_brcd_length")
+        return ini_brcd_len
