@@ -129,6 +129,30 @@ class Utils:
 
         workbook.save(filename=path + self.ext_xlsx)
 
+    def make_dict_to_excel_nSeq(self, path, merge_dict):
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+
+        row = 1
+        sheet.cell(row=row, column=1, value="index")
+        sheet.cell(row=row, column=2, value='TTTT_Barcode')
+        sheet.cell(row=row, column=3, value='TTTT_Barcode_cnt')
+        sheet.cell(row=row, column=4, value='Original sequence')
+
+        for barcd_key, val_dict in merge_dict.items():
+            row += 1
+            sheet.cell(row=row, column=1, value=str(row - 1))
+            sheet.cell(row=row, column=2, value=barcd_key)
+            sheet.cell(row=row, column=3, value=val_dict['TTTT_Barcode_cnt'])
+            sheet.cell(row=row, column=4, value=val_dict['Original sequence'])
+            for key in val_dict.keys():
+                try:
+                    col = int(key) + 2
+                    sheet.cell(row=row, column=col, value=val_dict[key])
+                except Exception as err:
+                    pass
+        workbook.save(filename=path + self.ext_xlsx)
+
     """
     get file lists in target dir by target ext
     :param
